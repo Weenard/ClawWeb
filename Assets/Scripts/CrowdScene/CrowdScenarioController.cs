@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrowdScenarioController : MonoBehaviour
 {
     [Header("References")]
     public CrowdSystem crowdSystem;
+    public Slider DensitySlider;
 
     private int initialDensity;
 
@@ -28,13 +30,13 @@ public class CrowdScenarioController : MonoBehaviour
         if (crowdSystem == null) return;
 
         int value = Mathf.RoundToInt(normalized * crowdSystem.maxDensity);
-        crowdSystem.SetDensity(value);
+        DensitySlider.value = value;
     }
 
     public void ResetScenario()
     {
         if (crowdSystem == null) return;
 
-        crowdSystem.SetDensity(initialDensity);
+        DensitySlider.value = initialDensity;
     }
 }
