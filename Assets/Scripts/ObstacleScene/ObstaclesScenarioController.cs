@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ObstaclesScenarioController : MonoBehaviour
 {
@@ -13,6 +16,8 @@ public class ObstaclesScenarioController : MonoBehaviour
     public Vector3 Min = new Vector3(-5, 0, -5);
     public Vector3 Max = new Vector3(5, 0, 5);
     public float Step = 0.5f;
+
+    private float x_ = 0, y_ = 0, z_ = 0;
 
     private List<GameObject> obstacles = new List<GameObject>();
 
